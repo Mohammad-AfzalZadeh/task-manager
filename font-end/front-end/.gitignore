@@ -1,0 +1,49 @@
+# ── Compiled output ──────────────────────────────────────
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# ── Node ─────────────────────────────────────────────────
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# ── Angular build cache ──────────────────────────────────
+/.angular/cache
+
+# ── IDEs and editors ─────────────────────────────────────
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# ── VS Code (allow a few shared files) ───────────────────
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# ── Testing ──────────────────────────────────────────────
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# ── Sass cache ───────────────────────────────────────────
+.sass-cache/
+/connect.lock
+
+# ── Env files ────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── System files ─────────────────────────────────────────
+.DS_Store
+Thumbs.db

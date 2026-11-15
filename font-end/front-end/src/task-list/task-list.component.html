@@ -1,0 +1,102 @@
+<div class="container">
+
+    <h2>Task Manager</h2>
+
+    <!-- Create / Edit Form -->
+
+    <form (ngSubmit)="saveTask()">
+
+        <div>
+            <label>Task title</label>
+
+            <input
+                type="text"
+                name="title"
+                [(ngModel)]="taskForm.title"
+                placeholder="Enter task title"
+                required
+            />
+        </div>
+
+        <div>
+            <label>Description</label>
+
+            <textarea
+                name="description"
+                [(ngModel)]="taskForm.description"
+                placeholder="Enter description"
+            ></textarea>
+        </div>
+
+        <button type="submit">
+            {{ editingTaskId !== null ? 'Update Task' : 'Add Task' }}
+        </button>
+
+        @if (editingTaskId !== null) {
+            <button
+                type="button"
+                (click)="resetForm()"
+            >
+                Cancel
+            </button>
+        }
+
+    </form>
+
+
+    <hr />
+
+
+    <!-- Task List -->
+
+    <h3>My Tasks</h3>
+
+    @if (tasks.length === 0) {
+
+        <p>No tasks found.</p>
+
+    } @else {
+
+        @for (task of tasks; track task.id) {
+
+            <div class="task">
+
+                <h3>{{ task.title }}</h3>
+
+                <p>{{ task.description }}</p>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        [checked]="task.completed"
+                        (change)="toggleTask(task)"
+                    />
+
+                    {{ task.completed ? 'Completed' : 'Pending' }}
+                </label>
+
+                <div class="actions">
+
+                    <button
+                        type="button"
+                        (click)="editTask(task)"
+                    >
+                        Edit
+                    </button>
+
+                    <button
+                        type="button"
+                        (click)="deleteTask(task.id)"
+                    >
+                        Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+        }
+
+    }
+
+</div>
