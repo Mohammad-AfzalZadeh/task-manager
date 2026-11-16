@@ -1,0 +1,21 @@
+
+front:
+
+
+
+------------------------
+
+backEnd:
+
+cd backend
+
+only for first setup : python -m venv venv
+
+run on every runserver: venv\Scripts\activate
+
+only for first setup :
+    python -m pip install "Django>=5.2,<5.3"
+    python -m pip install djangorestframework
+    python -m pip install django-cors-headers
+
+python manage.py runserver
