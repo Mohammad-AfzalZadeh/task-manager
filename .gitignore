@@ -1,0 +1,33 @@
+# ── OS junk ──────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── Editor / IDE ─────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.history/
+
+# ── Secrets: belt-and-suspenders ─────────────────────────
+# Each folder has its own rule, but this catches stray ones.
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# ── Logs ─────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Test coverage ────────────────────────────────────────
+coverage/
+.coverage
+htmlcov/
