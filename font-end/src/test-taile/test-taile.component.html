@@ -1,0 +1,240 @@
+<div class="mt-8 overflow-hidden rounded-xl bg-white shadow-sm">
+
+  <div class="flex items-center justify-between p-5">
+    <h2 class="font-bold text-slate-800">
+      Recent transactions
+    </h2>
+
+    <button
+      class="rounded-lg bg-blue-600 px-4 py-2 text-sm text-white
+             transition hover:bg-blue-700"
+    >
+      View all
+    </button>
+  </div>
+
+  <div class="overflow-x-auto">
+
+    <table class="w-full min-w-162.5 text-left text-sm">
+
+      <thead class="bg-slate-50 text-slate-500">
+        <tr>
+          <th class="px-5 py-3 font-medium">Description</th>
+          <th class="px-5 py-3 font-medium">Date</th>
+          <th class="px-5 py-3 font-medium">Amount</th>
+          <th class="px-5 py-3 font-medium">Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (item of transactions; track item.id) {
+          <tr class="border-t border-slate-100 hover:bg-slate-50">
+
+            <td class="px-5 py-4 font-medium text-slate-800">
+              {{ item.description }}
+            </td>
+
+            <td class="px-5 py-4 text-slate-500">
+              {{ item.date }}
+            </td>
+
+            <td class="px-5 py-4 font-semibold tabular-nums">
+              {{ item.amount }}
+            </td>
+
+            <td class="px-5 py-4">
+              <span
+                class="rounded-full px-3 py-1 text-xs font-medium"
+                [class.bg-green-100]="item.status === 'Completed'"
+                [class.text-green-700]="item.status === 'Completed'"
+                [class.bg-yellow-100]="item.status === 'Pending'"
+                [class.text-yellow-700]="item.status === 'Pending'"
+              >
+                {{ item.status }}
+              </span>
+            </td>
+
+          </tr>
+        }
+      </tbody>
+
+    </table>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="min-h-screen bg-gray-100 p-6"> -->
+<!-- <div class="flex justify-between items-center mb-6"> -->
+<!-- <h1 class="text-2xl font-bold">Dashboard</h1> -->
+
+<!-- <button class="bg-blue-600 text-white px-4 py-2 rounded">Add new</button> -->
+<!-- </div> -->
+
+<!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-4"> -->
+<!-- <div class="bg-white p-5 rounded-lg shadow"> -->
+<!-- <h3 class="text-gray-500">Users</h3> -->
+<!-- <p class="text-2xl font-bold">120</p> -->
+<!-- </div> -->
+
+<!-- <div class="bg-white p-5 rounded-lg shadow"> -->
+<!-- <h3 class="text-gray-500">Orders</h3> -->
+<!-- <p class="text-2xl font-bold">350</p> -->
+<!-- </div> -->
+
+<!-- <div class="bg-white p-5 rounded-lg shadow"> -->
+<!-- <h3 class="text-gray-500">Revenue</h3> -->
+<!-- <p class="text-2xl font-bold">$1200</p> -->
+<!-- </div> -->
+<!-- </div> -->
+
+<!-- <div class="mt-6 bg-white rounded-lg shadow"> -->
+<!-- <div class="p-4 flex justify-between"> -->
+<!-- <h2 class="font-bold">Recent transactions</h2> -->
+<!-- <button>View all</button> -->
+<!-- </div> -->
+
+<!-- <div class="overflow-x-auto"> -->
+<!-- <table class="w-full min-w-175 text-left"> -->
+<!-- <thead class="bg-gray-100"> -->
+<!-- <tr> -->
+<!-- <th class="p-3">ID</th> -->
+<!-- <th class="p-3">Description</th> -->
+<!-- <th class="p-3">Amount</th> -->
+<!-- </tr> -->
+<!-- </thead> -->
+
+<!-- <tbody> -->
+<!-- <tr class="border-t"> -->
+<!-- <td class="p-3">1</td> -->
+<!-- <td class="p-3">Payment received</td> -->
+<!-- <td class="p-3">$200</td> -->
+<!-- </tr> -->
+<!-- </tbody> -->
+<!-- </table> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2">
+  <div class="col-span-2 bg-blue-100 p-4">1</div>
+  <div class="bg-blue-100 p-4">2</div>
+  <div class="bg-blue-100 p-4">3</div>
+  <div class="bg-blue-100 p-4">4</div>
+  <div class="bg-blue-100 p-4">5</div>
+  <div class="bg-blue-100 p-4">6</div>
+</div>
+
+<p class="my-7">--------------------------------------</p>
+
+<div class="flex items-center justify-between p-4 bg-blue-100 rounded-lg">
+  <h2 class="text-sm ps-22 hover:bg-blue-800 font-bold text-red-800">
+    My Angular Project
+  </h2>
+</div>
+
+<p class="my-7">--------------------------------------</p>
+
+<input
+  class="border border-gray-300 rounded-md px-3 py-2 focus:border-blue-500 focus:outline-none"
+/>
+
+<p class="my-7">--------------------------------------</p>
+
+<div class="p-2">
+  <h2 class="text-blue-800 font-extrabold mb-1">Product information</h2>
+  <p class="text-blue-400 mb-1">This is a sample product description.</p>
+  <h1 class="text-blue-500 mb-1">120$</h1>
+  <button
+    class="text-center h-10 text-white text-bold w-full bg-blue-600 rounded-2xl"
+  >
+    Buy now
+  </button>
+</div>
+
+<p class="my-7">--------------------------------------</p>
+
+<div class="block border-2 border-gray-500">Block element</div>
+<div class="inline border-2 border-gray-500">Inline element</div>
+<div class="flex border-2 border-gray-500">Flex container</div>
+<div class="hidden border-2 border-gray-500">Invisible element</div>
+
+<div class="flex justify-between align-middle border gap-2 p-2 mx-2">
+  <div class="bg-amber-500 w-full text-center rounded-xl font-bold">1</div>
+  <div class="bg-blue-500 w-full text-center rounded-xl font-bold">2</div>
+  <div class="bg-pink-500 w-full text-center rounded-xl font-bold">3</div>
+</div>
+
+<p class="my-7">--------------------------------------</p>
+
+<div class="bg-white border border-gray-200 rounded-xl shadow-md p-6 max-w-sm">
+  <div class="flex items-center gap-4">
+    <div
+      class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center"
+    >
+      <span class="text-white font-bold text-xl"> JD </span>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-bold text-gray-800">John Doe</h2>
+
+      <p class="text-sm text-gray-500">Software Developer</p>
+    </div>
+  </div>
+
+  <div class="border-t border-gray-200 my-5"></div>
+
+  <p class="text-gray-600 text-sm leading-relaxed">
+    Angular developer interested in building modern web applications.
+  </p>
+
+  <button
+    class="w-full mt-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-colors"
+  >
+    View profile
+  </button>
+</div>
+
+<p class="my-7">--------------------------------------</p>
+
+<button
+  class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 focus:outline-2 focus:outline-blue-500 disabled:bg-gray-400 disabled:cursor-not-allowed"
+>
+  Save
+</button>
+<p class="my-7">--------------------------------------</p>
+
+<div
+  class="group border rounded-xl p-5 transition duration-300 hover:shadow-lg hover:border-blue-400"
+>
+  <div class="flex justify-between items-center">
+    <h2 class="font-bold text-lg transition-colors group-hover:text-blue-600">
+      Bank account
+    </h2>
+
+    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+      Active
+    </span>
+  </div>
+
+  <p class="text-gray-500 mt-3">Account number: 123456789</p>
+
+  <button
+    class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg transition duration-200 hover:bg-blue-700 active:scale-95"
+  >
+    View details
+  </button>
+</div>
