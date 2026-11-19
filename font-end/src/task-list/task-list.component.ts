@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService, Task } from './api.service';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -25,21 +26,18 @@ export class TaskListComponent implements OnInit {
 
   // Currently edited task ID
   editingTaskId: number | null = null;
+  private authService = inject(AuthService);
 
 
   ngOnInit(): void {
-
     this.loadTasks();
-
   }
-
 
   // GET
   loadTasks(): void {
-
     this.taskService.getTasks().subscribe({
-
       next: (response) => {
+        console.log(response)
         this.tasks = response;
       },
 
@@ -48,26 +46,20 @@ export class TaskListComponent implements OnInit {
       }
 
     });
-
   }
-
 
   // POST or PATCH
   saveTask(): void {
-
     if (!this.taskForm.title.trim()) {
       return;
     }
-
     if (this.editingTaskId !== null) {
 
       this.taskService.updateTask(
         this.editingTaskId,
         this.taskForm
       ).subscribe({
-
         next: (updatedTask) => {
-
           this.tasks = this.tasks.map(task =>
             task.id === updatedTask.id
               ? updatedTask

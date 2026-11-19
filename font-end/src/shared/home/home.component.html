@@ -1,0 +1,17 @@
+<div class="flex flex-col sm:flex-row" dir="rtl">
+  <aside class="border w-full sm:max-w-64 border-blue-300"></aside>
+  <main class="border w-full sm:flex-1 border-red-300 min-w-0">
+    <div class="flex absolute left-2.5">
+      <div>{{ username }}</div>
+      <button
+        class="px-2 font-serif hover:text-blue-700 cursor-pointer "
+        type="button"
+        (click)="logout()"
+      >
+        Logout
+      </button>
+    </div>
+
+    <router-outlet />
+  </main>
+</div>
